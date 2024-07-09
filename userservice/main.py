@@ -1,11 +1,5 @@
-from contextlib import asynccontextmanager
-from typing import Annotated
-from fastapi import FastAPI,Depends
-from sqlmodel import Session
-from userservice.models import User
-from userservice.db import getSession
 from userservice.routers import auth, manageUser
-from userservice.routers.auth import get_current_user
+from fastapi import FastAPI
 
 app = FastAPI(
     title='User Service',

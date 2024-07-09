@@ -18,3 +18,10 @@ class Update_user(SQLModel):
     id: Optional[int]
     username:str 
     password:str 
+
+class Forgot_password_request(SQLModel):
+    email:str
+
+class Forgot_password(SQLModel):
+    reset_token:str
+    new_password:str
