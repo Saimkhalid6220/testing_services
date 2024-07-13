@@ -10,7 +10,7 @@ from userservice.db import getSession
 from userservice.setting  import SECRET_KEY,ALGORITHM
 
 router=APIRouter(
-    prefix='/user',
+    prefix='/auth',
     tags=['Auth'],
 )
 
