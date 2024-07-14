@@ -27,3 +27,16 @@ class Forgot_password(SQLModel):
     reset_token:str
     new_password:str
 
+class Update_request(SQLModel):
+    email:str
+    old_password:str
+
+class Updated(SQLModel):
+    email:str
+
+class Update_password_request(SQLModel):
+    old_password:str
+    new_password:str
+
+class Password(SQLModel):
+    password:str   

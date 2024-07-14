@@ -18,7 +18,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="user/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):
     to_encode = data.copy()
@@ -30,7 +30,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt          
 
-def authenticate_user(user:OAuth2PasswordRequestForm,Vuser,Vpassword):
+def authenticate_user(user,Vuser,Vpassword):
     if not (user.username==Vuser and user.password==Vpassword):
         raise HTTPException(status_code=401 , detail="invaild credientials")
     return user
